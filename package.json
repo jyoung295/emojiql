@@ -1,0 +1,25 @@
+{
+  "name": "emojiql",
+  "version": "1.0.0",
+  "description": "GraphQL driven emoji API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyoung295/emojiql.git"
+  },
+  "author": "Jesse Young",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jyoung295/emojiql/issues"
+  },
+  "homepage": "https://github.com/jyoung295/emojiql#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.4.2"
+  }
+}
