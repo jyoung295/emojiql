@@ -1,2 +1,2 @@
-# emojiql
+# emojiql 🐨
 GraphQL driven emoji API
