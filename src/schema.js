@@ -1,4 +1,4 @@
-const { graphql, buildSchema } = require('graphql')
+const { buildSchema } = require('graphql')
 const emojiData = require('../data/emoji-data.json')
 
 exports.schema = buildSchema(`
@@ -16,3 +16,14 @@ exports.schema = buildSchema(`
     emojisByKeyword(keyword: String!): [Emoji!]!
   }
 `)
+
+exports.rootValue = {
+  emojisAll: () => {
+    Object.keys(emojiData).map(key => emojiData[key])
+  },
+  emojisByKeyword: ({ keyword }) => {
+    Object.keys(emojiData)
+      .map(key => emojiData[key])
+      .filter(emoji => (emoji.keywords.includes(keyword) ? emoji : null))
+  }
+}
