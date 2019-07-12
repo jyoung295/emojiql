@@ -4,7 +4,7 @@
   "description": "GraphQL driven emoji API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-fetch": "node src/format-data.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-graphql": "^0.8.0",
-    "graphql": "^14.4.2"
+    "graphql": "^14.4.2",
+    "node-fetch": "^2.6.0"
   }
 }
