@@ -15,5 +15,6 @@ app.use(
   })
 )
 
-app.listen(4000)
-console.log('Running GraphQL API server with GraphiQL frontend on localhost:4000/graphql')
+port = process.env.PORT || 3000
+app.listen(port)
+console.log(`Running GraphQL API server with GraphiQL frontend on port ${port}`)
