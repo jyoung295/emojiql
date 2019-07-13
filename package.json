@@ -4,7 +4,8 @@
   "description": "GraphQL driven emoji API",
   "main": "index.js",
   "scripts": {
-    "test-fetch": "node src/format-data.js"
+    "prestart": "node src/format-data.js",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",

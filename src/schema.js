@@ -3,12 +3,12 @@ const emojiData = require('../data/emoji-data.json')
 
 exports.schema = buildSchema(`
   type Emoji {
-    no: ID!
-    code: String!
-    char: String!
-    name: String!
-    date: String!
-    keywords: [String!]!
+    no: ID
+    code: String
+    char: String
+    name: String
+    date: String
+    keywords: [String!]
   }
 
   type Query {
@@ -19,10 +19,10 @@ exports.schema = buildSchema(`
 
 exports.rootValue = {
   emojisAll: () => {
-    Object.keys(emojiData).map(key => emojiData[key])
+    return Object.keys(emojiData).map(key => emojiData[key])
   },
   emojisByKeyword: ({ keyword }) => {
-    Object.keys(emojiData)
+    return Object.keys(emojiData)
       .map(key => emojiData[key])
       .filter(emoji => (emoji.keywords.includes(keyword) ? emoji : null))
   }
