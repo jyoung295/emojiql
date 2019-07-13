@@ -13,7 +13,7 @@ exports.schema = buildSchema(`
   type Query {
     emojisAll: [Emoji!]!
     emojisByKeyword(keyword: String!): [Emoji!]!
-    emojisByCategory(categpry: String!): [Emoji!]!
+    emojisByCategory(category: String!): [Emoji!]!
   }
 `)
 
@@ -25,5 +25,10 @@ exports.rootValue = {
     return Object.keys(emojiData)
       .map(key => emojiData[key])
       .filter(emoji => (emoji.keywords.includes(keyword) ? emoji : null))
+  },
+  emojisByCategory: ({ category }) => {
+    return Object.keys(emojiData)
+      .map(key => emojiData[key])
+      .filter(emoji => (emoji.category.includes(category) ? emoji : null))
   }
 }
