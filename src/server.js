@@ -11,7 +11,7 @@ app.use(
   graphqlHTTP({
     schema: schema,
     rootValue: rootValue,
-    graphiql: true
+    graphiql: false
   })
 )
 
