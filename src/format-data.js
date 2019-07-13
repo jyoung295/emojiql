@@ -16,9 +16,12 @@ const formatEmojiData = async uri => {
       emojiObj.keywords[0] = 'flag'
     }
     emojiObj.keywords.push(emojiObj.name)
+    emojiObj.keywords = emojiObj.keywords.map(word => {
+      return word.toLowerCase()
+    })
     emojiObj.category = emojiObj.category.split(' (')[0]
   })
-  console.log(origEmojiJson)
+
   return { ...origEmojiJson }
 }
 

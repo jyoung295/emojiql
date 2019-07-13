@@ -13,6 +13,7 @@ exports.schema = buildSchema(`
   type Query {
     emojisAll: [Emoji!]!
     emojisByKeyword(keyword: String!): [Emoji!]!
+    emojisByCategory(categpry: String!): [Emoji!]!
   }
 `)
 
