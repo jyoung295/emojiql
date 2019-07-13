@@ -3,10 +3,11 @@ const emojiData = require('../data/emoji-data.json')
 
 exports.schema = buildSchema(`
   type Emoji {
+    no: ID
     code: String
     char: String
     name: String
-    category: String
+    date: String
     keywords: [String!]
   }
 
