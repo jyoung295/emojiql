@@ -24,7 +24,10 @@ exports.rootValue = {
   emojisByKeyword: ({ keyword }) => {
     return Object.keys(emojiData)
       .map(key => emojiData[key])
-      .filter(emoji => (emoji.keywords.includes(keyword) ? emoji : null))
+      .filter(emoji =>{ 
+        const doesContainKeyword = emoji.keywords.filter(storedKeyword => storedKeyword.includes(keyword))
+        return doesContainKeyword.length > 0 ? emoji : null
+      })
   },
   emojisByCategory: ({ category }) => {
     return Object.keys(emojiData)
